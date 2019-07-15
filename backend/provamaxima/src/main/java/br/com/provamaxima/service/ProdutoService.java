@@ -30,4 +30,9 @@ public class ProdutoService {
 		final Optional<Produto> optional = produtoRepository.findById(id);
 		optional.ifPresent(produtoRepository::delete);
 	}
+
+	public Produto fetchById(Long id) {
+		final Optional<Produto> optional = produtoRepository.findById(id);
+		return optional.orElse(null);
+	}
 }

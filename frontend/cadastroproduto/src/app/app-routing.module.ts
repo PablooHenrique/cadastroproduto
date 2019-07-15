@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'produto/list',
     loadChildren: './produto/list/list.module#ListModule'
-  }
+  },
+  {
+    path: 'produto/edit/:id',
+    loadChildren: './produto/edit/edit.module#EditModule'
+  },
 ];
 
 @NgModule({

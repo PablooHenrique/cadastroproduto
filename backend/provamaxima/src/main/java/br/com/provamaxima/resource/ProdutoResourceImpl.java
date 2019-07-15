@@ -27,6 +27,12 @@ public class ProdutoResourceImpl implements ProdutoResource {
 		return new ResponseEntity<>(produtos, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Produto> fetchById(@PathVariable("id") final Long id) {
+		final Produto produto = produtoService.fetchById(id);
+		return new ResponseEntity<>(produto, HttpStatus.OK);
+	}
+
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Produto> save(@RequestBody final Produto produto, final UriComponentsBuilder ucBuilder) {
 		final Produto saved = produtoService.save(produto);

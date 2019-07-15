@@ -30,6 +30,17 @@ export class ProdutoService {
       }).toPromise();
   }
 
+  fetchById(id: number): Promise<Produto> {
+    return this.httpClient.get<Produto>(
+      ProdutoService.RESOURCE_PATH + '/' + id,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }).toPromise();
+  }
+
   delete(id: number) {
     return this.httpClient.delete(
       ProdutoService.RESOURCE_PATH + '/' + id

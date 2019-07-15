@@ -18,7 +18,7 @@ export class ProdutoCreateComponent {
 
   save() {
     this._produtoService.save(this.produto).then(() => {
-      this._snackBar.open('Produto: ' + this.produto.descricao + ' salvo com sucesso', 'salvo', {
+      this._snackBar.open('Produto: ' + this.produto.descricao + ' salvo com sucesso', 'Ok', {
         duration: 5000,
       });
 
