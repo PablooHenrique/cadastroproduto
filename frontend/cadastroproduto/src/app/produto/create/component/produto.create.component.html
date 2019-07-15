@@ -1,0 +1,11 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Descrição" name="descricao" [(ngModel)]="produto.descricao">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Preço" [(ngModel)]="produto.preco">
+  </mat-form-field>
+</div>
+
+<button mat-button color="primary" (click)="save()">Save</button>
